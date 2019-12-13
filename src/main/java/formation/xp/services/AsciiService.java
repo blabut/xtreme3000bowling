@@ -74,9 +74,73 @@ public class AsciiService {
         System.out.println("\u001B[0m");
     }
 
+    public static void getKeels(int number){
+            number = number -1;
+            for (int i=0; i<number+1; i++) {
+                System.out.print("            **,..      ");
+            }
+            System.out.print("\n");
+            for (int i=0; i<number+1; i++) {
+                System.out.print("            ((*..      ");
+            }
+            System.out.print("\n");
+            for (int i=0; i<number+1; i++) {
+                System.out.print("            /(*,,      ");
+            }
+            System.out.print("\n");
+            for (int i=0; i<number+1; i++) {
+                System.out.print("            .%%#,      ");
+            }
+            System.out.print("\n");
+            for (int i=0; i<number+1; i++) {
+                System.out.print("             /,.       ");
+            }
+            System.out.print("\n");
+            for (int i=0; i<number+1; i++) {
+                System.out.print("            ,(/..      ");
+            }
+            System.out.print("\n");
+            for (int i=0; i<number+1; i++) {
+                System.out.print("            **. .      ");
+            }
+            System.out.print("\n");
+            for (int i=0; i<number+1; i++) {
+                System.out.print("           ***.  .     ");
+            }
+            System.out.print("\n");
+            for (int i=0; i<number+1; i++) {
+                System.out.print("          ,/*,..  .    ");
+            }
+            System.out.print("\n");
+            for (int i=0; i<number+1; i++) {
+                System.out.print("          *//*,....    ");
+            }
+            System.out.print("\n");
+            for (int i=0; i<number+1; i++) {
+                System.out.print("          *//*,,...    ");
+            }
+            System.out.print("\n");
+            for (int i=0; i<number+1; i++) {
+                System.out.print("          ****,,...    ");
+            }
+            System.out.print("\n");
+            for (int i=0; i<number+1; i++) {
+                System.out.print("          ,***,,..     ");
+            }
+            System.out.print("\n");
+            for (int i=0; i<number+1; i++) {
+                System.out.print("           ***,,..     ");
+            }
+            System.out.print("\n");
+            for (int i=0; i<number+1; i++) {
+                System.out.print("            **,,,      ");
+            }
+            System.out.print("\n");
+        }
+
     public static void main(String[] args) throws IOException, InterruptedException {
         AsciiService asciiService = new AsciiService();
-        asciiService.getAsciiFromString("This is a test", "block");
+        asciiService.getKeels(4);
 
     }
 }
