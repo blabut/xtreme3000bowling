@@ -40,8 +40,8 @@ public class GameService {
             while (num_tour < 10) {
                 for (int i = 0; i < joueurs.size(); i++) {
                     Joueur joueur = joueurs.get(i);
-                    this.asciiService.getAsciiFromString(String.format("Tour:+%s", num_tour), "block");
-                    this.asciiService.getAsciiFromString(String.format("Joueur:+%s", joueur.getPseudo()), "block");
+                    this.asciiService.getAsciiFromString(String.format("Tour:+%s", num_tour), "standard");
+                    this.asciiService.getAsciiFromString(String.format("Joueur:+%s", joueur.getPseudo()), "standard");
                     Tour tour = new Tour();
                     asciiService.getKeels(10);
                     System.out.println("Lancer 1 - Press enter to play");
