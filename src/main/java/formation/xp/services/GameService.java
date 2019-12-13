@@ -40,17 +40,17 @@ public class GameService {
             while (num_tour < 10) {
                 for (int i = 0; i < joueurs.size(); i++) {
                     Joueur joueur = joueurs.get(i);
-                    this.asciiService.getAsciiFromString(String.format("Tour:+%s", num_tour), "block");
-                    this.asciiService.getAsciiFromString(String.format("Joueur:+%s", joueur.getPseudo()), "block");
+                    this.asciiService.getAsciiFromString(String.format("Tour:+%s", num_tour), "standard");
+                    this.asciiService.getAsciiFromString(String.format("Joueur:+%s", joueur.getPseudo()), "standard");
                     Tour tour = new Tour();
                     asciiService.getKeels(10);
                     System.out.println("Lancer 1 - Press enter to play");
-                    String ok = this.scanner.nextLine();
+                    this.scanner.nextLine();
                     int scoreTour1 = tour.doLancer1(joueur);
                     asciiService.getKeels(10-scoreTour1);
                     if (!(scoreTour1 == 10)) {
                         System.out.println("Lancer 2 - Press enter to play");
-                        ok = this.scanner.nextLine();
+                        this.scanner.nextLine();
                         int scoreTour2 = tour.doLancer2(joueur);
                         asciiService.getKeels(10 - scoreTour1 - scoreTour2);
                     }
