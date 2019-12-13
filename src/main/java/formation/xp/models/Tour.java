@@ -20,7 +20,7 @@ public class Tour {
         this.lancer1 = nombreQuillesTombees;
     }
 
-    public void doLancer2(Joueur joueur, int quillesRestantes) {
+    public void doLancer2(Joueur joueur) {
         Random rand = new Random();
         int nombreQuillesTombees = rand.nextInt(11 - this.lancer1);
         this.lancer2 = nombreQuillesTombees;

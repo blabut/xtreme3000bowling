@@ -22,8 +22,8 @@ public class TourTest {
         this.joueur = new Joueur("test", 0);
         this.tour = new Tour();
         tour.doLancer1(this.joueur);
-        tour.doLancer2(this.joueur, tour.getLancer1());
-        assertTrue(0 <= tour.getLancer2() && tour.getLancer2() <= tour.getLancer1() );
+        tour.doLancer2(this.joueur);
+        assertTrue(0 <= tour.getLancer2() && tour.getLancer2() <= 10 - tour.getLancer1() );
     }
 
 }
