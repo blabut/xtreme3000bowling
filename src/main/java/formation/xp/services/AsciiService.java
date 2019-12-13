@@ -77,63 +77,63 @@ public class AsciiService {
     public static void getKeels(int number){
             number = number -1;
             for (int i=0; i<number+1; i++) {
-                System.out.print("            **,..      ");
+                System.out.print("            **,..   ");
             }
             System.out.print("\n");
             for (int i=0; i<number+1; i++) {
-                System.out.print("            ((*..      ");
+                System.out.print("            ((*..   ");
             }
             System.out.print("\n");
             for (int i=0; i<number+1; i++) {
-                System.out.print("            /(*,,      ");
+                System.out.print("            /(*,,   ");
             }
             System.out.print("\n");
             for (int i=0; i<number+1; i++) {
-                System.out.print("            .%%#,      ");
+                System.out.print("            .%%#,   ");
             }
             System.out.print("\n");
             for (int i=0; i<number+1; i++) {
-                System.out.print("             /,.       ");
+                System.out.print("             /,.    ");
             }
             System.out.print("\n");
             for (int i=0; i<number+1; i++) {
-                System.out.print("            ,(/..      ");
+                System.out.print("            ,(/..   ");
             }
             System.out.print("\n");
             for (int i=0; i<number+1; i++) {
-                System.out.print("            **. .      ");
+                System.out.print("            **. .   ");
             }
             System.out.print("\n");
             for (int i=0; i<number+1; i++) {
-                System.out.print("           ***.  .     ");
+                System.out.print("           ***.  .  ");
             }
             System.out.print("\n");
             for (int i=0; i<number+1; i++) {
-                System.out.print("          ,/*,..  .    ");
+                System.out.print("          ,/*,..  . ");
             }
             System.out.print("\n");
             for (int i=0; i<number+1; i++) {
-                System.out.print("          *//*,....    ");
+                System.out.print("          *//*,.... ");
             }
             System.out.print("\n");
             for (int i=0; i<number+1; i++) {
-                System.out.print("          *//*,,...    ");
+                System.out.print("          *//*,,... ");
             }
             System.out.print("\n");
             for (int i=0; i<number+1; i++) {
-                System.out.print("          ****,,...    ");
+                System.out.print("          ****,,... ");
             }
             System.out.print("\n");
             for (int i=0; i<number+1; i++) {
-                System.out.print("          ,***,,..     ");
+                System.out.print("          ,***,,..  ");
             }
             System.out.print("\n");
             for (int i=0; i<number+1; i++) {
-                System.out.print("           ***,,..     ");
+                System.out.print("           ***,,..  ");
             }
             System.out.print("\n");
             for (int i=0; i<number+1; i++) {
-                System.out.print("            **,,,      ");
+                System.out.print("            **,,,   ");
             }
             System.out.print("\n");
         }
