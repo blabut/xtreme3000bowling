@@ -1,14 +1,17 @@
 package formation.xp.models;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Joueur {
     String pseudo;
     int level; // on a scale from 1 to 10
+    List<Tour> turns = new ArrayList<Tour>();
     int score;
 
     public Joueur(String pseudo, int level) {
         this.pseudo = pseudo;
         this.level = level;
-        this.score = 0;
     }
 
     public String getPseudo() {
