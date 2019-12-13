@@ -45,12 +45,12 @@ public class GameService {
                     Tour tour = new Tour();
                     asciiService.getKeels(10);
                     System.out.println("Lancer 1 - Press enter to play");
-                    String ok = this.scanner.nextLine();
+                    this.scanner.nextLine();
                     int scoreTour1 = tour.doLancer1(joueur);
                     asciiService.getKeels(10-scoreTour1);
                     if (!(scoreTour1 == 10)) {
                         System.out.println("Lancer 2 - Press enter to play");
-                        ok = this.scanner.nextLine();
+                        this.scanner.nextLine();
                         int scoreTour2 = tour.doLancer2(joueur);
                         asciiService.getKeels(10 - scoreTour1 - scoreTour2);
                     }
