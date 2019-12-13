@@ -23,13 +23,13 @@ public class TestAffichage {
         Tour turns1 = new Tour();
         Tour turns2 = new Tour();
         
-        turns1.setLancer1(10);
-        turns1.setLancer2(0);
+        turns1.setLancer1(1);
+        turns1.setLancer2(3);
         
         turns.add(turns1);
         
-        turns2.setLancer1(2);
-        turns2.setLancer2(4);
+        turns2.setLancer1(5);
+        turns2.setLancer2(5);
         turns.add(turns2);
         
         joueur.setTour(turns);
@@ -38,6 +38,5 @@ public class TestAffichage {
         
         af.affichageScore();
         af.affichageTour();
-        //assertTrue(score.calculScore()==22);
     }
 }
