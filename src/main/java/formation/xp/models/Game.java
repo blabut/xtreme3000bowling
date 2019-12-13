@@ -4,36 +4,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Game {
-    Joueur joueur;
-    List<Tour> tours = new ArrayList<Tour>();
-    int score;
+    List<Joueur> joueurs = new ArrayList<Joueur>();
+    int currentPlayerIndex;
 
-    public Game(Joueur joueur) {
-        this.joueur = joueur;
-        this.score = 0;
+    public Game(List<String> nomsJoueurs) {
+        this.currentPlayerIndex = 0;
+        for (int i = 0; i < nomsJoueurs.size(); i++) {
+            String nom = nomsJoueurs.get(i);
+            joueurs.add(new Joueur(nom, 10));
+        }
     }
 
-    public Joueur getJoueur() {
-        return joueur;
+    public Joueur getCurrentPlayer() {
+        return this.joueurs.get(this.currentPlayerIndex);
     }
 
-    public void setJoueur(Joueur joueur) {
-        this.joueur = joueur;
+    public Joueur getPlayer(int i) {
+        return this.joueurs.get(i);
     }
 
-    public List<Tour> getTours() {
-        return tours;
-    }
-
-    public void setTours(List<Tour> tours) {
-        this.tours = tours;
-    }
-
-    public int getScore() {
-        return score;
-    }
-
-    public void setScore(int score) {
-        this.score = score;
+    public List<Joueur> getJoueurs() {
+        return joueurs;
     }
 }
