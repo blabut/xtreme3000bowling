@@ -14,13 +14,13 @@ public class Tour {
 
     }
 
-    public void Lancer1(Joueur joueur) {
+    public void doLancer1(Joueur joueur) {
         Random rand = new Random();
         int nombreQuillesTombees = rand.nextInt(11);
         this.lancer1 = nombreQuillesTombees;
     }
 
-    public void Lancer2(Joueur joueur, int quillesRestantes) {
+    public void doLancer2(Joueur joueur, int quillesRestantes) {
         Random rand = new Random();
         int nombreQuillesTombees = rand.nextInt(11 - this.lancer1);
         this.lancer2 = nombreQuillesTombees;
