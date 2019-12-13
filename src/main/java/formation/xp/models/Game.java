@@ -23,5 +23,7 @@ public class Game {
         return this.joueurs.get(i);
     }
 
-
+    public List<Joueur> getJoueurs() {
+        return joueurs;
+    }
 }
