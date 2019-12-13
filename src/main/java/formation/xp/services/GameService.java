@@ -12,15 +12,16 @@ import java.util.Scanner;
 public class GameService {
         Game game;
         AsciiService asciiService;
+        Scanner scanner;
 
         public GameService() throws IOException, InterruptedException {
             this.asciiService = new AsciiService();
             this.asciiService.getHeader();
-            Scanner scanner = new Scanner(System.in);
+            this.scanner = new Scanner(System.in);
             System.out.println("Entrez le nom du joueur 1:\n");
-            String nom1 = scanner.nextLine();
+            String nom1 = this.scanner.nextLine();
             System.out.println("Entrez le nom du joueur 2:\n");
-            String nom2 = scanner.nextLine();
+            String nom2 = this.scanner.nextLine();
             List<String> listNoms = new ArrayList();
             listNoms.add(nom1);
             listNoms.add(nom2);
@@ -33,21 +34,25 @@ public class GameService {
 
         }
 
-        public void play() {
+        public void play() throws IOException, InterruptedException {
             int num_tour = 0;
             List<Joueur> joueurs = this.game.getJoueurs();
             while (num_tour < 10) {
                 for (int i = 0; i < joueurs.size(); i++) {
                     Joueur joueur = joueurs.get(i);
-                    System.out.println(String.format("Tour: %s\nJoueur: %s\n", num_tour, joueur.getPseudo()));
+                    this.asciiService.getAsciiFromString(String.format("Tour:+%s", num_tour), "block");
+                    this.asciiService.getAsciiFromString(String.format("Joueur:+%s", joueur.getPseudo()), "block");
                     Tour tour = new Tour();
-                    System.out.println("Lancer 1");
+                    asciiService.getKeels(10);
+                    System.out.println("Lancer 1 - Press enter to play");
+                    String ok = this.scanner.nextLine();
                     int scoreTour1 = tour.doLancer1(joueur);
-                    System.out.println(scoreTour1);
+                    asciiService.getKeels(10-scoreTour1);
                     if (!(scoreTour1 == 10)) {
-                        System.out.println("Lancer 2");
+                        System.out.println("Lancer 2 - Press enter to play");
+                        ok = this.scanner.nextLine();
                         int scoreTour2 = tour.doLancer2(joueur);
-                        System.out.println(scoreTour2);
+                        asciiService.getKeels(10 - scoreTour1 - scoreTour2);
                     }
                     num_tour++;
                 }
