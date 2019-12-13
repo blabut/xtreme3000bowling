@@ -2,6 +2,7 @@ package formation.xp.services;
 
 import formation.xp.models.Game;
 import formation.xp.models.Joueur;
+import formation.xp.models.Score;
 import formation.xp.models.Tour;
 
 import java.io.IOException;
@@ -13,6 +14,7 @@ public class GameService {
         Game game;
         AsciiService asciiService;
         Scanner scanner;
+        List<Score> scores = new ArrayList<Score>();
 
         public GameService() throws IOException, InterruptedException {
             this.asciiService = new AsciiService();
@@ -26,6 +28,9 @@ public class GameService {
             listNoms.add(nom1);
             listNoms.add(nom2);
             this.game = new Game(listNoms);
+            for (int i = 0; i < game.getJoueurs().size(); i++) {
+                this.scores.add(new Score(game.getPlayer(i)));
+            }
             this.asciiService.getAsciiFromString("Are you ready to play??", "speed");
             this.asciiService.getAsciiFromString(String.format("%s VS %s", nom1, nom2), "isometric3");
 
@@ -43,6 +48,7 @@ public class GameService {
                     this.asciiService.getAsciiFromString(String.format("Tour:+%s", num_tour), "standard");
                     this.asciiService.getAsciiFromString(String.format("Joueur:+%s", joueur.getPseudo()), "standard");
                     Tour tour = new Tour();
+                    joueur.getTurns().add(tour);
                     asciiService.getKeels(10);
                     System.out.println("Lancer 1 - Press enter to play");
                     this.scanner.nextLine();
@@ -55,6 +61,10 @@ public class GameService {
                         asciiService.getKeels(10 - scoreTour1 - scoreTour2);
                     }
                     num_tour++;
+                    for (int j = 0; j < this.scores.size(); j++) {
+                        asciiService.getAsciiFromString(String.format("%s+:+%s", game.getPlayer(j).getPseudo(), String.valueOf(scores.get(j).calculScore())), "standard");
+                        System.out.println("\n");
+                    }
                 }
 
             }

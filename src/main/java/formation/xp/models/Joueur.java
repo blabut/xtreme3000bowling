@@ -14,6 +14,14 @@ public class Joueur {
         this.level = level;
     }
 
+    public List<Tour> getTurns() {
+        return turns;
+    }
+
+    public void setTurns(List<Tour> turns) {
+        this.turns = turns;
+    }
+
     public String getPseudo() {
         return pseudo;
     }
