@@ -29,6 +29,10 @@ public class Joueur {
     public void setLevel(int level) {
         this.level = level;
     }
+    
+    public void setTour(List<Tour> turns) {
+        this.turns = turns;
+    }
 
     public int getScore() {
         return score;

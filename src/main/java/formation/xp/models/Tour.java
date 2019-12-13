@@ -6,6 +6,7 @@ public class Tour {
 
     public int lancer1;
     public int lancer2;
+    public int lancer3;
 
     public Tour() {
         this.lancer1 = -1;
