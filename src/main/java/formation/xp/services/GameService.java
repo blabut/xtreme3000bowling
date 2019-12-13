@@ -1,6 +1,8 @@
 package formation.xp.services;
 
 import formation.xp.models.Game;
+import formation.xp.models.Joueur;
+import formation.xp.models.Tour;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -23,12 +25,39 @@ public class GameService {
             listNoms.add(nom1);
             listNoms.add(nom2);
             this.game = new Game(listNoms);
-            asciiService.getAsciiFromString("Are you ready to play??", "speed");
-            asciiService.getAsciiFromString(String.format("%s VS %s", nom1, nom2), "isometric3");
+            this.asciiService.getAsciiFromString("Are you ready to play??", "speed");
+            this.asciiService.getAsciiFromString(String.format("%s VS %s", nom1, nom2), "isometric3");
+
+
+
+
+        }
+
+        public void play() {
+            int num_tour = 0;
+            List<Joueur> joueurs = this.game.getJoueurs();
+            while (num_tour < 10) {
+                for (int i = 0; i < joueurs.size(); i++) {
+                    Joueur joueur = joueurs.get(i);
+                    System.out.println(String.format("Tour: %s\nJoueur: %s\n", num_tour, joueur.getPseudo()));
+                    Tour tour = new Tour();
+                    System.out.println("Lancer 1");
+                    int scoreTour1 = tour.doLancer1(joueur);
+                    System.out.println(scoreTour1);
+                    if (!(scoreTour1 == 10)) {
+                        System.out.println("Lancer 2");
+                        int scoreTour2 = tour.doLancer2(joueur);
+                        System.out.println(scoreTour2);
+                    }
+                    num_tour++;
+                }
+
+            }
         }
 
     public static void main(String[] args) throws IOException, InterruptedException {
             GameService gs = new GameService();
+            gs.play();
     }
 
     }

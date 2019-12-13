@@ -4,7 +4,7 @@ import java.net.URI;
 import java.io.*;
 import java.net.*;
 public class AsciiService {
-    public static void getAsciiFromString(String string, String font) throws IOException, InterruptedException {
+    public void getAsciiFromString(String string, String font) throws IOException, InterruptedException {
         StringBuilder result = new StringBuilder();
         String urlToRead = String.format("http://artii.herokuapp.com/make?text=%s&font=%s", string.replace(" ", "+"), font);
         URL url = new URL(urlToRead);
@@ -21,7 +21,7 @@ public class AsciiService {
 
     }
 
-    public static void getHeader() {
+    public  void getHeader() {
         System.out.println("\u001B[35m");
         System.out.println("__________              .__  .__              ____  ___ __                                ________ _______  _______  _______   \n" +
                 "\\______   \\ ______  _  _|  | |__| ____    ____\\   \\/  //  |________   ____   _____   ____ \\_____  \\\\   _  \\ \\   _  \\ \\   _  \\  \n" +
