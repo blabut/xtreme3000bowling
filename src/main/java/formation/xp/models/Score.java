@@ -38,13 +38,10 @@ public class Score {
 						}
 						else
 						{
-							score+=10;
-							if(i!=9)
+							if(i!=joueur.turns.size()-1)
 							{
+								score+=10;
 								score+=joueur.turns.get(i+1).lancer1;
-							}else
-							{
-								score+=joueur.turns.get(i).lancer3;
 							}
 						}
 					}else
