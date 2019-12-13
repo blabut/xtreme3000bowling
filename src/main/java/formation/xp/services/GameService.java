@@ -57,8 +57,16 @@ public class GameService {
                     if (!(scoreTour1 == 10)) {
                         System.out.println("Lancer 2 - Press enter to play");
                         this.scanner.nextLine();
-                        int scoreTour2 = tour.doLancer2(joueur);
-                        asciiService.getKeels(10 - scoreTour1 - scoreTour2);
+                        int scoreTour2 = 10 - scoreTour1 - tour.doLancer2(joueur);
+                        asciiService.getKeels(scoreTour2);
+                        if (scoreTour2==0) {
+                            this.asciiService.getAsciiFromString("Spaaaaaaaaare", "speed");
+                            System.out.println(("\n"));
+                        }
+                    }
+                    else{
+                        this.asciiService.getAsciiFromString("Striiiiiiike", "speed");
+                        System.out.println(("\n"));
                     }
                     num_tour++;
                     for (int j = 0; j < this.scores.size(); j++) {
@@ -68,6 +76,21 @@ public class GameService {
                 }
 
             }
+
+            String winner = this.getWinner(this.scores);
+            this.asciiService.getAsciiFromString(String.format("Le gagnant est : %s !!!!!", winner), "standard");
+        }
+
+        public String getWinner(List<Score> scores) {
+            String winner = "Personne";
+            int max = 0;
+            for (int j = 0; j < this.scores.size(); j++) {
+                if (scores.get(j).calculScore() > max){
+                    winner = this.game.getPlayer(j).getPseudo();
+                }
+            }
+
+            return winner;
         }
 
     public static void main(String[] args) throws IOException, InterruptedException {
