@@ -1,38 +1,44 @@
 package formation.xp.models;
 
+import java.util.Random;
+
 public class Tour {
 
-    int nbQuillesTombees;
-    boolean isSpare;
-    boolean isStrike;
+    public int lancer1;
+    public int lancer2;
 
     public Tour() {
-        this.nbQuillesTombees = 0;
-        this.isSpare = false;
-        this.isStrike = false;
+        this.lancer1 = -1;
+        this.lancer2 = -1;
+
+
     }
 
-    public int getNbQuillesTombees() {
-        return nbQuillesTombees;
+    public void Lancer1(Joueur joueur) {
+        Random rand = new Random();
+        int nombreQuillesTombees = rand.nextInt(11);
+        this.lancer1 = nombreQuillesTombees;
     }
 
-    public void setNbQuillesTombees(int nbQuillesTombees) {
-        this.nbQuillesTombees = nbQuillesTombees;
+    public void Lancer2(Joueur joueur, int quillesRestantes) {
+        Random rand = new Random();
+        int nombreQuillesTombees = rand.nextInt(11 - this.lancer1);
+        this.lancer2 = nombreQuillesTombees;
     }
 
-    public boolean isSpare() {
-        return isSpare;
+    public int getLancer1() {
+        return lancer1;
     }
 
-    public void setSpare(boolean spare) {
-        isSpare = spare;
+    public void setLancer1(int lancer1) {
+        this.lancer1 = lancer1;
     }
 
-    public boolean isStrike() {
-        return isStrike;
+    public int getLancer2() {
+        return lancer2;
     }
 
-    public void setStrike(boolean strike) {
-        isStrike = strike;
+    public void setLancer2(int lancer2) {
+        this.lancer2 = lancer2;
     }
 }
