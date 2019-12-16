@@ -87,6 +87,7 @@ public class GameService {
             for (int j = 0; j < this.scores.size(); j++) {
                 if (scores.get(j).calculScore() > max){
                     winner = this.game.getPlayer(j).getPseudo();
+                    max = scores.get(j).calculScore();
                 }
             }
 
